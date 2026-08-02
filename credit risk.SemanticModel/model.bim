@@ -1,0 +1,2412 @@
+{
+  "compatibilityLevel": 1606,
+  "model": {
+    "annotations": [
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"Summary_KPIs\",\"README\",\"Pivot_Region\",\"Pivot_LTVxDTI\",\"Pivot_CreditBand\",\"Loan_Data\",\"SummaryKPIs\",\"Data_Dictionary\",\"PivotRegion\",\"PivotLTVxDTI\",\"PivotCreditBand\",\"DataDictionary\",\"LoanData\"]"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-IN",
+    "cultures": [
+      {
+        "name": "en-IN"
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "AutoDetected_e499de8f-65a1-498c-85dd-bee0dd3c31b3",
+        "fromColumn": "region",
+        "fromTable": "Loan_Data",
+        "toColumn": "region",
+        "toTable": "Pivot_Region"
+      },
+      {
+        "name": "AutoDetected_870c0136-373f-4ced-a9b0-32ec90266573",
+        "fromColumn": "region",
+        "fromTable": "LoanData",
+        "toColumn": "region",
+        "toTable": "Pivot_Region"
+      },
+      {
+        "name": "AutoDetected_164d62cd-64b1-4f7a-a310-d0dc2c65bba7",
+        "fromColumn": "region",
+        "fromTable": "Loan_Data",
+        "toColumn": "region",
+        "toTable": "PivotRegion"
+      },
+      {
+        "name": "AutoDetected_d8016ac8-d520-4697-a800-30edc28bbe2c",
+        "fromColumn": "region",
+        "fromTable": "LoanData",
+        "toColumn": "region",
+        "toTable": "PivotRegion"
+      },
+      {
+        "name": "AutoDetected_55e85f0d-f46e-404e-b80e-31cca05b9be2",
+        "fromColumn": "credit_score_band",
+        "fromTable": "Loan_Data",
+        "toColumn": "credit_score_band",
+        "toTable": "Pivot_CreditBand"
+      },
+      {
+        "name": "AutoDetected_c71fcd3e-00fa-401b-a435-e68d69db32b8",
+        "fromColumn": "credit_score_band",
+        "fromTable": "LoanData",
+        "toColumn": "credit_score_band",
+        "toTable": "Pivot_CreditBand"
+      },
+      {
+        "name": "AutoDetected_736d2ba1-a925-4945-a901-de8509c98869",
+        "fromColumn": "credit_score_band",
+        "fromTable": "Loan_Data",
+        "toColumn": "credit_score_band",
+        "toTable": "PivotCreditBand"
+      },
+      {
+        "name": "AutoDetected_b32b60c3-a878-49d3-90a8-9fa61ff3a344",
+        "fromColumn": "credit_score_band",
+        "fromTable": "LoanData",
+        "toColumn": "credit_score_band",
+        "toTable": "PivotCreditBand"
+      },
+      {
+        "name": "AutoDetected_3b0be838-7483-4b18-9023-04f8e5593c89",
+        "crossFilteringBehavior": "bothDirections",
+        "fromCardinality": "one",
+        "fromColumn": "Column",
+        "fromTable": "DataDictionary",
+        "toColumn": "Column1",
+        "toTable": "Data_Dictionary"
+      }
+    ],
+    "sourceQueryCulture": "en-IN",
+    "tables": [
+      {
+        "name": "Summary_KPIs",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Column1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a07088d6-ef30-41b2-a6e8-7fbafb8682bf",
+            "sourceColumn": "Column1",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Column2",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "4284a74a-c1d5-43a0-959c-894909705244",
+            "sourceColumn": "Column2",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "896688f3-2be9-4960-b02a-a3d2b1e8fcce",
+        "partitions": [
+          {
+            "name": "Summary_KPIs",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mansi\\Desktop\\Loan_Default_Cleaned.xlsx\"), null, true),",
+                "    Summary_KPIs_Sheet = Source{[Item=\"Summary_KPIs\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Summary_KPIs_Sheet,{{\"Column1\", type text}, {\"Column2\", type text}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "README",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Column1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "91301f8a-b985-4c2f-ad63-08d7457df380",
+            "sourceColumn": "Column1",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "3b00ba93-be4a-4141-9eef-ef010a00e670",
+        "partitions": [
+          {
+            "name": "README",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mansi\\Desktop\\Loan_Default_Cleaned.xlsx\"), null, true),",
+                "    README_Sheet = Source{[Item=\"README\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(README_Sheet,{{\"Column1\", type text}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Pivot_Region",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "region",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "311706c7-badf-4b59-a284-415334ce3061",
+            "sourceColumn": "region",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "total_loans",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0220bff6-932f-4813-a494-a8b38114ebc4",
+            "sourceColumn": "total_loans",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "total_volume",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "2a8776aa-1ffd-49dc-b099-3d5551749b1c",
+            "sourceColumn": "total_volume",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "avg_loan_amount",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b7650a3b-3328-4d48-8366-74c4f5f9d948",
+            "sourceColumn": "avg_loan_amount",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "defaults",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "24b5ac4c-eb13-4ac8-8f04-70e0bda7f130",
+            "sourceColumn": "defaults",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "default_rate_pct",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "3708de58-6f47-4453-9691-88ab1ab10ff3",
+            "sourceColumn": "default_rate_pct",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "191e36d6-a1ad-451c-827b-3c1cca9f5034",
+        "partitions": [
+          {
+            "name": "Pivot_Region",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mansi\\Desktop\\Loan_Default_Cleaned.xlsx\"), null, true),",
+                "    Pivot_Region_Sheet = Source{[Item=\"Pivot_Region\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Pivot_Region_Sheet, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"region\", type text}, {\"total_loans\", Int64.Type}, {\"total_volume\", Int64.Type}, {\"avg_loan_amount\", Int64.Type}, {\"defaults\", Int64.Type}, {\"default_rate_pct\", type number}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Pivot_LTVxDTI",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ltv_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7bb99249-5e03-42ed-a084-78340f29c1e0",
+            "sourceColumn": "ltv_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "dti_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d6d73404-80be-44ef-9d2d-7a4a86c72761",
+            "sourceColumn": "dti_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "total_loans",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "aac955e6-68da-4134-882b-28f78f433ad0",
+            "sourceColumn": "total_loans",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "defaults",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "216fd77d-f0c7-4161-851a-dec7ab175c60",
+            "sourceColumn": "defaults",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "default_rate_pct",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "6ca8f15a-f9fa-474e-bae8-028c31089ee2",
+            "sourceColumn": "default_rate_pct",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "a279e995-be22-4d55-b861-45cfcc4e5770",
+        "partitions": [
+          {
+            "name": "Pivot_LTVxDTI",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mansi\\Desktop\\Loan_Default_Cleaned.xlsx\"), null, true),",
+                "    Pivot_LTVxDTI_Sheet = Source{[Item=\"Pivot_LTVxDTI\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Pivot_LTVxDTI_Sheet, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ltv_band\", type text}, {\"dti_band\", type text}, {\"total_loans\", Int64.Type}, {\"defaults\", Int64.Type}, {\"default_rate_pct\", type number}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Pivot_CreditBand",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "credit_score_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0ecbac2b-88c0-4a90-aeec-91fe7b751c77",
+            "sourceColumn": "credit_score_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "total_loans",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "81fa9007-c504-4dea-b765-156bcb31a8e6",
+            "sourceColumn": "total_loans",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "defaults",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7160601f-7196-4dcb-91b9-93fb4c41a85b",
+            "sourceColumn": "defaults",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "avg_loan_amount",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "796b21a4-b462-4e6d-9dfe-3f2bc30b1d2b",
+            "sourceColumn": "avg_loan_amount",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "default_rate_pct",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "b73cd00f-8d67-483a-bd48-0f7b879de023",
+            "sourceColumn": "default_rate_pct",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "4eccb4bf-af5e-4f6a-8924-9581d57257a9",
+        "partitions": [
+          {
+            "name": "Pivot_CreditBand",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mansi\\Desktop\\Loan_Default_Cleaned.xlsx\"), null, true),",
+                "    Pivot_CreditBand_Sheet = Source{[Item=\"Pivot_CreditBand\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Pivot_CreditBand_Sheet, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"credit_score_band\", type text}, {\"total_loans\", Int64.Type}, {\"defaults\", Int64.Type}, {\"avg_loan_amount\", Int64.Type}, {\"default_rate_pct\", type number}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Loan_Data",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "bb9c407d-6155-438b-aeba-5b1dc8a61c31",
+            "sourceColumn": "ID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ec8fb28a-9e4f-4cce-a934-82b8f39485ed",
+            "sourceColumn": "year",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "region",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "930d3847-41f8-4c87-8982-1094787968d0",
+            "sourceColumn": "region",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "gender",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b62c3d19-6f7f-4494-be1a-7ad5d0782f9a",
+            "sourceColumn": "gender",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "age_group",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ceba9075-79af-4200-8a61-b56eba21500e",
+            "sourceColumn": "age_group",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "loan_purpose",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "be77a1c3-e4da-4acd-a90e-8865d31bc3a6",
+            "sourceColumn": "loan_purpose",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "loan_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7a7a45a5-9dfc-433c-be86-f34539b3591b",
+            "sourceColumn": "loan_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "loan_limit",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "75ac8a2c-6f5f-4efb-9b1e-18536a2b3f95",
+            "sourceColumn": "loan_limit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "business_or_commercial",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8254ad70-4bca-468f-a654-191909406498",
+            "sourceColumn": "business_or_commercial",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "occupancy_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e3d23252-93c1-4932-9858-4a848704f30a",
+            "sourceColumn": "occupancy_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "construction_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a529c8c4-5872-42f4-b465-a0eb7cd6e9c5",
+            "sourceColumn": "construction_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "secured_by",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a0bf308b-0091-4d14-9f80-3de67b2b1f1b",
+            "sourceColumn": "secured_by",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "total_units",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "523eced6-d4a9-4127-969e-3ff76f971e21",
+            "sourceColumn": "total_units",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "loan_amount",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "6e79124a-8847-4510-9967-9232872db108",
+            "sourceColumn": "loan_amount",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "loan_amount_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "79d7ffdb-12b9-44c6-98c1-474ca37242c4",
+            "sourceColumn": "loan_amount_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "property_value",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "5972f359-9304-495e-bbc7-78d895f132d3",
+            "sourceColumn": "property_value",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ltv",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "2d7815e2-e753-419d-8b48-9060bada83d8",
+            "sourceColumn": "ltv",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ltv_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5888a5ff-468a-4067-9683-05d3a1d3d903",
+            "sourceColumn": "ltv_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ltv_outlier_capped",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "be8cfe64-fb52-4190-8bb6-66523721405e",
+            "sourceColumn": "ltv_outlier_capped",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "income",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b17d7613-3cfe-4bf1-8fd3-b918d80c1b95",
+            "sourceColumn": "income",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "loan_to_income",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "9118333b-b422-4a58-91d7-e0492bb6813b",
+            "sourceColumn": "loan_to_income",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "credit_score",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b5cd0b27-a6e7-44fa-b9e7-8595c5f6f3c7",
+            "sourceColumn": "credit_score",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "credit_score_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bc9b53b9-c7a0-44c3-9542-bb649a27ecd9",
+            "sourceColumn": "credit_score_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "credit_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "135b5f80-d825-4497-bf28-5066ba66816c",
+            "sourceColumn": "credit_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "co_applicant_credit_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1f9289c7-ee91-4c72-9242-28a4a44e0b1d",
+            "sourceColumn": "co_applicant_credit_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rate_of_interest",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "8fad0337-df4c-4962-b56e-8a35133cd90c",
+            "sourceColumn": "rate_of_interest",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "rate_of_interest_imputed",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d5bb0d84-e11e-486f-b912-d0d685b4859b",
+            "sourceColumn": "rate_of_interest_imputed",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rate_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dd0722e1-918a-498e-9f82-0bd8c31c378f",
+            "sourceColumn": "rate_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "interest_rate_spread",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "6d891534-d2c3-45af-870d-9ff3833327ca",
+            "sourceColumn": "interest_rate_spread",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "upfront_charges",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "c644fc70-0589-452e-8417-de0b2eef33b3",
+            "sourceColumn": "upfront_charges",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "term_months",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0b9db377-0e00-4195-ae5a-37b43acf641b",
+            "sourceColumn": "term_months",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "dtir1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b4acff42-efec-42a1-a475-648801562f8e",
+            "sourceColumn": "dtir1",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "dti_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1dc37d45-b3bf-4078-9ea4-a8188ca1187e",
+            "sourceColumn": "dti_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "neg_ammortization",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "112c2ef4-c058-4bdb-9ca3-47ad6c1405d0",
+            "sourceColumn": "neg_ammortization",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "interest_only",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "144854b0-ccb0-47f3-bfa3-e4fde913b47a",
+            "sourceColumn": "interest_only",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "lump_sum_payment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "43ccc620-6198-45da-979c-4eda1d07864d",
+            "sourceColumn": "lump_sum_payment",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "approv_in_adv",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "b4b208ea-9c76-42b5-93c7-d4bee54ffdbb",
+            "sourceColumn": "approv_in_adv",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "submission_of_application",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "95ffd9e6-9b69-4fa2-892a-e06c0a68eec3",
+            "sourceColumn": "submission_of_application",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "open_credit",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "009a2a51-ce40-43b9-98c3-75bf98ce784b",
+            "sourceColumn": "open_credit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "credit_worthiness",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0848ebfa-5650-4325-a849-730c7e57ce76",
+            "sourceColumn": "credit_worthiness",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "security_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "49531b04-4e47-41dc-b571-c24abad07fee",
+            "sourceColumn": "security_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "1b600392-c29c-4792-83ba-3ee414f5fb7e",
+            "sourceColumn": "status",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "status_label",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "abd9e9fc-c667-47c4-9672-5b8e802170b1",
+            "sourceColumn": "status_label",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "b7e049f5-b238-41bf-bd24-5e8fb06abb01",
+        "partitions": [
+          {
+            "name": "Loan_Data",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mansi\\Desktop\\Loan_Default_Cleaned.xlsx\"), null, true),",
+                "    Loan_Data_Sheet = Source{[Item=\"Loan_Data\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Loan_Data_Sheet, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"ID\", Int64.Type}, {\"year\", Int64.Type}, {\"region\", type text}, {\"gender\", type text}, {\"age_group\", type text}, {\"loan_purpose\", type text}, {\"loan_type\", type text}, {\"loan_limit\", type text}, {\"business_or_commercial\", type text}, {\"occupancy_type\", type text}, {\"construction_type\", type text}, {\"secured_by\", type text}, {\"total_units\", type text}, {\"loan_amount\", Int64.Type}, {\"loan_amount_band\", type text}, {\"property_value\", Int64.Type}, {\"ltv\", type number}, {\"ltv_band\", type text}, {\"ltv_outlier_capped\", type text}, {\"income\", Int64.Type}, {\"loan_to_income\", type number}, {\"credit_score\", Int64.Type}, {\"credit_score_band\", type text}, {\"credit_type\", type text}, {\"co_applicant_credit_type\", type text}, {\"rate_of_interest\", type number}, {\"rate_of_interest_imputed\", type text}, {\"rate_band\", type text}, {\"interest_rate_spread\", type number}, {\"upfront_charges\", type number}, {\"term_months\", Int64.Type}, {\"dtir1\", Int64.Type}, {\"dti_band\", type text}, {\"neg_ammortization\", type text}, {\"interest_only\", type text}, {\"lump_sum_payment\", type text}, {\"approv_in_adv\", type text}, {\"submission_of_application\", type text}, {\"open_credit\", type text}, {\"credit_worthiness\", type text}, {\"security_type\", type text}, {\"status\", Int64.Type}, {\"status_label\", type text}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "SummaryKPIs",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "KPI",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8403d5c8-339a-44b3-893a-8573ef09c9d7",
+            "sourceColumn": "KPI",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Value",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "649abf2a-874d-4411-ae2c-85742259d79b",
+            "sourceColumn": "Value",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "9209e54c-c1bb-4dbb-92db-43ae89188779",
+        "partitions": [
+          {
+            "name": "SummaryKPIs",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mansi\\Desktop\\Loan_Default_Cleaned.xlsx\"), null, true),",
+                "    SummaryKPIs_Table = Source{[Item=\"SummaryKPIs\",Kind=\"Table\"]}[Data],",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(SummaryKPIs_Table,{{\"KPI\", type text}, {\"Value\", type text}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Data_Dictionary",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Column1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "81871cb9-72c0-415a-967f-69eb6adcb64b",
+            "sourceColumn": "Column1",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Column2",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a3121609-81e2-4116-95fc-d300d6ebcb8c",
+            "sourceColumn": "Column2",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Column3",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "475c9167-5697-40bd-a677-2913a4733318",
+            "sourceColumn": "Column3",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "4c8f1054-8e79-42ba-9f50-ada399072c32",
+        "partitions": [
+          {
+            "name": "Data_Dictionary",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mansi\\Desktop\\Loan_Default_Cleaned.xlsx\"), null, true),",
+                "    Data_Dictionary_Sheet = Source{[Item=\"Data_Dictionary\",Kind=\"Sheet\"]}[Data],",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(Data_Dictionary_Sheet,{{\"Column1\", type text}, {\"Column2\", type text}, {\"Column3\", type text}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "PivotRegion",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "region",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "05e5ca6f-e6d7-4026-bc2f-12a9ee597808",
+            "sourceColumn": "region",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "total_loans",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "38c0e014-d792-4ea3-89b6-383027a142ea",
+            "sourceColumn": "total_loans",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "total_volume",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "f34d9ac1-7aeb-4c2c-aeaf-b648f363be03",
+            "sourceColumn": "total_volume",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "avg_loan_amount",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "831aa00f-ec2e-40c1-8f56-2bef27438cb6",
+            "sourceColumn": "avg_loan_amount",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "defaults",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "179b6371-6bd6-45f9-abb7-8ccea767702d",
+            "sourceColumn": "defaults",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "default_rate_pct",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "d9e6bbc8-3cdc-4b09-9610-a778af70f5cb",
+            "sourceColumn": "default_rate_pct",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "600cffd4-d623-478b-83e8-5547a8f38152",
+        "partitions": [
+          {
+            "name": "PivotRegion",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mansi\\Desktop\\Loan_Default_Cleaned.xlsx\"), null, true),",
+                "    PivotRegion_Table = Source{[Item=\"PivotRegion\",Kind=\"Table\"]}[Data],",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(PivotRegion_Table,{{\"region\", type text}, {\"total_loans\", Int64.Type}, {\"total_volume\", Int64.Type}, {\"avg_loan_amount\", Int64.Type}, {\"defaults\", Int64.Type}, {\"default_rate_pct\", type number}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "PivotLTVxDTI",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ltv_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f7179d5c-cb26-4433-9819-c0ef1c860aba",
+            "sourceColumn": "ltv_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "dti_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "47f1182b-a938-4d6c-8334-66e7de83de80",
+            "sourceColumn": "dti_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "total_loans",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "1d5ea9e8-a826-40ed-ab82-14e54db0f59b",
+            "sourceColumn": "total_loans",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "defaults",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "7a95651d-0120-4dcc-b3fa-5a7125db0aff",
+            "sourceColumn": "defaults",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "default_rate_pct",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "0db62328-01aa-40f1-b9e3-93e059b1aabc",
+            "sourceColumn": "default_rate_pct",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "3155c9e1-81a3-452d-b927-e8f8fd4b341d",
+        "partitions": [
+          {
+            "name": "PivotLTVxDTI",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mansi\\Desktop\\Loan_Default_Cleaned.xlsx\"), null, true),",
+                "    PivotLTVxDTI_Table = Source{[Item=\"PivotLTVxDTI\",Kind=\"Table\"]}[Data],",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(PivotLTVxDTI_Table,{{\"ltv_band\", type text}, {\"dti_band\", type text}, {\"total_loans\", Int64.Type}, {\"defaults\", Int64.Type}, {\"default_rate_pct\", type number}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "PivotCreditBand",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "credit_score_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a0ec3325-221a-4712-a389-61845b7ba7f0",
+            "sourceColumn": "credit_score_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "total_loans",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "bf34fae6-94af-42c1-b947-e43edbdf5ccc",
+            "sourceColumn": "total_loans",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "defaults",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a2d64615-5fa2-4b3f-b61a-977bcc3a747c",
+            "sourceColumn": "defaults",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "avg_loan_amount",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "aec2a4f2-0406-40b6-9cdb-275a6515713b",
+            "sourceColumn": "avg_loan_amount",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "default_rate_pct",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "0eea16c0-0949-46bf-af90-c8f8516ddf8a",
+            "sourceColumn": "default_rate_pct",
+            "summarizeBy": "sum"
+          }
+        ],
+        "lineageTag": "e7baf48f-9183-465a-a5cf-ffa07522ed25",
+        "partitions": [
+          {
+            "name": "PivotCreditBand",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mansi\\Desktop\\Loan_Default_Cleaned.xlsx\"), null, true),",
+                "    PivotCreditBand_Table = Source{[Item=\"PivotCreditBand\",Kind=\"Table\"]}[Data],",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(PivotCreditBand_Table,{{\"credit_score_band\", type text}, {\"total_loans\", Int64.Type}, {\"defaults\", Int64.Type}, {\"avg_loan_amount\", Int64.Type}, {\"default_rate_pct\", type number}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DataDictionary",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Column",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "dd83782e-c6eb-49fb-9f4a-b7f17073c89d",
+            "sourceColumn": "Column",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "184567bf-d34c-4e33-bb87-ce1f0b0e6b39",
+            "sourceColumn": "Type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Cleaning / Definition Notes",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "e0d69034-77ec-4204-af0d-c7e32c988ff8",
+            "sourceColumn": "Cleaning / Definition Notes",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "2fdc39a9-2e78-4bb7-8202-5e12156ad073",
+        "partitions": [
+          {
+            "name": "DataDictionary",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mansi\\Desktop\\Loan_Default_Cleaned.xlsx\"), null, true),",
+                "    DataDictionary_Table = Source{[Item=\"DataDictionary\",Kind=\"Table\"]}[Data],",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(DataDictionary_Table,{{\"Column\", type text}, {\"Type\", type text}, {\"Cleaning / Definition Notes\", type text}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "LoanData",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "6463adc1-129d-4a1f-b367-8dcecfd662e4",
+            "sourceColumn": "ID",
+            "summarizeBy": "count"
+          },
+          {
+            "name": "year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "f7480104-be55-47f1-92ae-97d6c5fef7e4",
+            "sourceColumn": "year",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "region",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8a62593b-4e32-4b39-93cf-38ca27093a77",
+            "sourceColumn": "region",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "gender",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ec2527e1-9e2f-4b9f-bb85-0d04809bda45",
+            "sourceColumn": "gender",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "age_group",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5e1e2501-54bd-423d-a722-4b1fad769cb0",
+            "sourceColumn": "age_group",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "loan_purpose",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "69511c98-fc84-4bf4-98a7-5d0f50f6999e",
+            "sourceColumn": "loan_purpose",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "loan_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d74b8fce-08b0-4a9e-890c-36231bd71980",
+            "sourceColumn": "loan_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "loan_limit",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "315f1352-2e73-4000-8179-1f8495d0d3eb",
+            "sourceColumn": "loan_limit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "business_or_commercial",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "513b4280-7a2d-43f8-9905-26ba43c97b26",
+            "sourceColumn": "business_or_commercial",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "occupancy_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "fbcf1162-d0fa-4109-8e72-21fad340fdef",
+            "sourceColumn": "occupancy_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "construction_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "d0822aad-f7d3-44e8-af73-43987c711d20",
+            "sourceColumn": "construction_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "secured_by",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "67fc98b6-302f-464c-b558-3cfd458949c8",
+            "sourceColumn": "secured_by",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "total_units",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "859a66fc-67bb-49c5-8b17-a0172a362305",
+            "sourceColumn": "total_units",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "loan_amount",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "3d7835c0-17d7-402d-b032-d8f0132f8f41",
+            "sourceColumn": "loan_amount",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "loan_amount_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "11b4f6fb-bbbf-4b06-bd7f-2809e053797c",
+            "sourceColumn": "loan_amount_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "property_value",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "c2ffa1f6-6a71-45e4-b725-08d4aad6a5cf",
+            "sourceColumn": "property_value",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ltv",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "ae562825-5537-4afc-8077-8dfe6b6a491d",
+            "sourceColumn": "ltv",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "ltv_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "3402025e-4083-4b72-aba6-a3aed97ee367",
+            "sourceColumn": "ltv_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "ltv_outlier_capped",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "2e85a30c-5162-4695-8021-0ca685c6af27",
+            "sourceColumn": "ltv_outlier_capped",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "income",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "b3ddbde4-37ac-4b24-8db1-0588a4d566b1",
+            "sourceColumn": "income",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "loan_to_income",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "5f947ba9-6eee-463e-aa84-f347e1e1e9bc",
+            "sourceColumn": "loan_to_income",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "credit_score",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "a43deab8-edf2-42dc-8839-657e8c6d66c7",
+            "sourceColumn": "credit_score",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "credit_score_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bcbce18e-f1cf-4c96-8126-05d34c695c46",
+            "sourceColumn": "credit_score_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "credit_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "694b164c-f22a-4aa5-86ed-c3104c4ca30a",
+            "sourceColumn": "credit_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "co_applicant_credit_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5d04566e-8d26-4b25-8fe4-809f21f91ece",
+            "sourceColumn": "co_applicant_credit_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rate_of_interest",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "b8c3790f-a5dd-4e21-8803-f0d474a13251",
+            "sourceColumn": "rate_of_interest",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "rate_of_interest_imputed",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "a84f5fc7-9fe8-4736-8de2-7e9fc3f7107c",
+            "sourceColumn": "rate_of_interest_imputed",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "rate_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "27564dc5-0b86-420e-b83a-55e336f958ef",
+            "sourceColumn": "rate_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "interest_rate_spread",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "a8432b9b-5fc9-4873-be12-412f4118165c",
+            "sourceColumn": "interest_rate_spread",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "upfront_charges",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "dataType": "double",
+            "lineageTag": "78a45cbc-b082-4c75-95d4-4de65d5bcfcd",
+            "sourceColumn": "upfront_charges",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "term_months",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "643649b3-ae18-447a-9d6d-46a0aef097f2",
+            "sourceColumn": "term_months",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "dtir1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "ec6a3dda-49e3-4e78-9e7f-2691dbb92018",
+            "sourceColumn": "dtir1",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "dti_band",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "5eabfc24-e41a-49d6-8248-c9f7bf8e8893",
+            "sourceColumn": "dti_band",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "neg_ammortization",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "22c18d8d-e25d-4639-b638-737da900f899",
+            "sourceColumn": "neg_ammortization",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "interest_only",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "af0718bb-9a96-4cec-9230-57d45f18948a",
+            "sourceColumn": "interest_only",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "lump_sum_payment",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ee1ab43e-a6ad-47a6-a348-8902621311d7",
+            "sourceColumn": "lump_sum_payment",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "approv_in_adv",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "16926dd6-3690-45b0-b86f-c666e6b8c29b",
+            "sourceColumn": "approv_in_adv",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "submission_of_application",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "babeb948-d077-44b2-876a-b97d3cfbe987",
+            "sourceColumn": "submission_of_application",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "open_credit",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "8b74bba0-ffb0-4e15-8822-851a3baa2cbc",
+            "sourceColumn": "open_credit",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "credit_worthiness",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "f2a28bf3-e5b5-416b-9540-f09c1b8b6067",
+            "sourceColumn": "credit_worthiness",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "security_type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "39c0b261-4bed-4bbe-a62d-d70699bc7b3b",
+            "sourceColumn": "security_type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "status",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "584cd6cf-fcb8-403b-8cbe-31997b7e71ce",
+            "sourceColumn": "status",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "status_label",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "79442aa7-3b3b-4d00-b36b-d9fbec1a6835",
+            "sourceColumn": "status_label",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "a7c320bd-ee7e-407a-b043-2a630662de51",
+        "partitions": [
+          {
+            "name": "LoanData",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Excel.Workbook(File.Contents(\"C:\\Users\\mansi\\Desktop\\Loan_Default_Cleaned.xlsx\"), null, true),",
+                "    LoanData_Table = Source{[Item=\"LoanData\",Kind=\"Table\"]}[Data],",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(LoanData_Table,{{\"ID\", Int64.Type}, {\"year\", Int64.Type}, {\"region\", type text}, {\"gender\", type text}, {\"age_group\", type text}, {\"loan_purpose\", type text}, {\"loan_type\", type text}, {\"loan_limit\", type text}, {\"business_or_commercial\", type text}, {\"occupancy_type\", type text}, {\"construction_type\", type text}, {\"secured_by\", type text}, {\"total_units\", type text}, {\"loan_amount\", Int64.Type}, {\"loan_amount_band\", type text}, {\"property_value\", Int64.Type}, {\"ltv\", type number}, {\"ltv_band\", type text}, {\"ltv_outlier_capped\", type text}, {\"income\", Int64.Type}, {\"loan_to_income\", type number}, {\"credit_score\", Int64.Type}, {\"credit_score_band\", type text}, {\"credit_type\", type text}, {\"co_applicant_credit_type\", type text}, {\"rate_of_interest\", type number}, {\"rate_of_interest_imputed\", type text}, {\"rate_band\", type text}, {\"interest_rate_spread\", type number}, {\"upfront_charges\", type number}, {\"term_months\", Int64.Type}, {\"dtir1\", Int64.Type}, {\"dti_band\", type text}, {\"neg_ammortization\", type text}, {\"interest_only\", type text}, {\"lump_sum_payment\", type text}, {\"approv_in_adv\", type text}, {\"submission_of_application\", type text}, {\"open_credit\", type text}, {\"credit_worthiness\", type text}, {\"security_type\", type text}, {\"status\", Int64.Type}, {\"status_label\", type text}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Measure_",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "67a887964a134e409736e18a15e52c51"
+          },
+          {
+            "name": "436ba87b-9c83-4389-a31b-ebd06a36be98",
+            "value": "{\"Expression\":\"{}\"}"
+          },
+          {
+            "name": "277cc1b9-af89-4597-8e15-cacc25c0886b",
+            "value": [
+              "An Evaluate statement cannot return a table without columns.",
+              ""
+            ]
+          }
+        ],
+        "columns": [
+          {
+            "name": "Column",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "8a5fd061-00ff-4269-8dd2-a32d074d2fba",
+            "sourceColumn": "[Column]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "f41ae427-6876-4f7c-bbad-3f24a8749169",
+        "measures": [
+          {
+            "name": "Total Loans",
+            "expression": "COUNTROWS(Loan_Data)",
+            "formatString": "0",
+            "lineageTag": "9a34dcd0-d884-4afd-a5b5-fca3ca1a04a2"
+          },
+          {
+            "name": "Total Loan Volume",
+            "expression": "SUM(Loan_Data[loan_amount])",
+            "formatString": "0",
+            "lineageTag": "65c07adc-7180-443f-b025-33802dbd7b11"
+          },
+          {
+            "name": "Total Defaults",
+            "expression": "SUM(Loan_Data[status])",
+            "formatString": "0",
+            "lineageTag": "eab468d8-4e97-4e2b-8e7f-b3324c4cb637"
+          },
+          {
+            "name": "Default Rate",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "DIVIDE([Total Defaults], [Total Loans], 0)",
+            "lineageTag": "cc4438b8-b1e8-4147-ab9d-cd082fd43e87"
+          },
+          {
+            "name": "Avg Loan Amount",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "AVERAGE(Loan_Data[loan_amount])",
+            "lineageTag": "d4a05db5-7b5e-4458-8522-f38541479ba2"
+          },
+          {
+            "name": "Avg Credit Score",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "AVERAGE(Loan_Data[credit_score])",
+            "lineageTag": "a614cd4b-6df6-4c8b-8e10-c14523f56d90"
+          },
+          {
+            "name": "Avg DTI",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "AVERAGE(Loan_Data[dtir1])",
+            "lineageTag": "c38e6e2d-9373-45f2-b184-e5a10182cf82"
+          },
+          {
+            "name": "Avg Interest Rate",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "AVERAGE(Loan_Data[rate_of_interest])",
+            "lineageTag": "996af0c8-bb3f-4b00-a887-73a7d5d932de"
+          },
+          {
+            "name": "% Imputed Rate Values",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": [
+              "",
+              "DIVIDE(",
+              "    CALCULATE([Total Loans], Loan_Data[rate_of_interest_imputed] = \"Yes\"),",
+              "    [Total Loans]",
+              ")"
+            ],
+            "lineageTag": "bb5efea5-0911-4a18-82b1-c3c696915c90"
+          },
+          {
+            "name": "Avg LTV",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "AVERAGE(Loan_Data[ltv])",
+            "lineageTag": "92c496f0-0fb1-45ea-8e59-deced0f37a8f"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Measure_",
+            "mode": "import",
+            "source": {
+              "expression": "Row(\"Column\", BLANK())",
+              "type": "calculated"
+            }
+          }
+        ]
+      }
+    ],
+    "valueFilterBehavior": "independent"
+  }
+}

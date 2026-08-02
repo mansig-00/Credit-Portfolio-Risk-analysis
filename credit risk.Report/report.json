@@ -1,0 +1,219 @@
+{
+  "config": "{\"version\":\"5.75\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY26SU07\",\"version\":{\"visual\":\"2.11.0\",\"report\":\"3.4.0\",\"page\":\"2.3.1\"},\"type\":2},\"customTheme\":{\"name\":\"AccessibleOrchid\",\"version\":{\"visual\":\"2.11.0\",\"report\":\"3.4.0\",\"page\":\"2.3.1\"},\"type\":2}},\"activeSectionIndex\":3,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "AccessibleOrchid",
+            "path": "BuiltInThemes/AccessibleOrchid.json",
+            "type": 201
+          },
+          {
+            "name": "CY26SU07",
+            "path": "BaseThemes/CY26SU07.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Loan economics",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "231a212a3840553643d9",
+      "ordinal": 2,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"e6817c6c2475d1a6a081\",\"layouts\":[{\"id\":0,\"position\":{\"x\":671.6666666666667,\"y\":408.33333333333337,\"z\":1000,\"width\":424.1666666666667,\"height\":168.33333333333334,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Measure_.Avg Interest Rate\"},{\"queryRef\":\"Measure_.Avg LTV\"},{\"queryRef\":\"Measure_.Avg DTI\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Measure_\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Avg Interest Rate\"},\"Name\":\"Measure_.Avg Interest Rate\",\"NativeReferenceName\":\"Avg Interest Rate\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Avg LTV\"},\"Name\":\"Measure_.Avg LTV\",\"NativeReferenceName\":\"Avg LTV\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Avg DTI\"},\"Name\":\"Measure_.Avg DTI\",\"NativeReferenceName\":\"Avg DTI\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Avg Interest Rate\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 168.33,
+          "width": 424.17,
+          "x": 671.67,
+          "y": 408.33,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"e6c077b0d23d976d8b72\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":48.333333333333336,\"z\":0,\"width\":591.6666666666667,\"height\":555,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Loan_Data.rate_band\",\"active\":true}],\"Y\":[{\"queryRef\":\"Measure_.Avg Loan Amount\"},{\"queryRef\":\"Measure_.Total Loans\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"Loan_Data\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Measure_\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"rate_band\"},\"Name\":\"Loan_Data.rate_band\",\"NativeReferenceName\":\"rate_band\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Avg Loan Amount\"},\"Name\":\"Measure_.Avg Loan Amount\",\"NativeReferenceName\":\"Avg Loan Amount\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"},\"Name\":\"Measure_.Total Loans\",\"NativeReferenceName\":\"Total Loans\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Avg Loan Amount\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"valueAxis\":[{\"properties\":{\"gridlineColor\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}]}}}",
+          "filters": "[]",
+          "height": 555.00,
+          "width": 591.67,
+          "x": 0.00,
+          "y": 48.33,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"e93ed826a4e7a418419a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":671.6666666666667,\"y\":48.333333333333336,\"z\":2000,\"width\":425,\"height\":240,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"LoanData.credit_type\"},{\"queryRef\":\"LoanData.co_applicant_credit_type\"},{\"queryRef\":\"Measure_.Total Loans\"},{\"queryRef\":\"Measure_.Default Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"LoanData\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Measure_\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"credit_type\"},\"Name\":\"LoanData.credit_type\",\"NativeReferenceName\":\"credit_type\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"co_applicant_credit_type\"},\"Name\":\"LoanData.co_applicant_credit_type\",\"NativeReferenceName\":\"co_applicant_credit_type\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"},\"Name\":\"Measure_.Total Loans\",\"NativeReferenceName\":\"Total Loans\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Default Rate\"},\"Name\":\"Measure_.Default Rate\",\"NativeReferenceName\":\"Default Rate\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 240.00,
+          "width": 425.00,
+          "x": 671.67,
+          "y": 48.33,
+          "z": 2000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Application profile",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "4244a3fd4d4e990ba0e4",
+      "ordinal": 3,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"35be393386b55190970d\",\"layouts\":[{\"id\":0,\"position\":{\"x\":600,\"y\":0,\"z\":1000,\"width\":490,\"height\":360,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Measure_.Default Rate\"},{\"queryRef\":\"Measure_.Total Loans\"}],\"Category\":[{\"queryRef\":\"Loan_Data.gender\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Measure_\",\"Type\":0},{\"Name\":\"l\",\"Entity\":\"Loan_Data\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Default Rate\"},\"Name\":\"Measure_.Default Rate\",\"NativeReferenceName\":\"Default Rate\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"},\"Name\":\"Measure_.Total Loans\",\"NativeReferenceName\":\"Total Loans\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"gender\"},\"Name\":\"Loan_Data.gender\",\"NativeReferenceName\":\"gender\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Default Rate\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 360.00,
+          "width": 490.00,
+          "x": 600.00,
+          "y": 0.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"3d50c6c361a905a40ea5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":43.333333333333336,\"y\":480,\"z\":3000,\"width\":460,\"height\":120,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"LoanData.secured_by\"},{\"queryRef\":\"LoanData.security_type\"},{\"queryRef\":\"LoanData.construction_type\"},{\"queryRef\":\"Measure_.Total Loans\"},{\"queryRef\":\"Measure_.Default Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"LoanData\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Measure_\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"secured_by\"},\"Name\":\"LoanData.secured_by\",\"NativeReferenceName\":\"secured_by\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"security_type\"},\"Name\":\"LoanData.security_type\",\"NativeReferenceName\":\"security_type\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"construction_type\"},\"Name\":\"LoanData.construction_type\",\"NativeReferenceName\":\"construction_type\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"},\"Name\":\"Measure_.Total Loans\",\"NativeReferenceName\":\"Total Loans\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Default Rate\"},\"Name\":\"Measure_.Default Rate\",\"NativeReferenceName\":\"Default Rate\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 120.00,
+          "width": 460.00,
+          "x": 43.33,
+          "y": 480.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"60e0a48890180149281c\",\"layouts\":[{\"id\":0,\"position\":{\"x\":600,\"y\":360,\"z\":2000,\"width\":430,\"height\":360,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"LoanData.occupancy_type\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(LoanData.status_label)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"LoanData\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"occupancy_type\"},\"Name\":\"LoanData.occupancy_type\",\"NativeReferenceName\":\"occupancy_type\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"status_label\"}},\"Function\":5},\"Name\":\"CountNonNull(LoanData.status_label)\",\"NativeReferenceName\":\"status_label\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"status_label\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 360.00,
+          "width": 430.00,
+          "x": 600.00,
+          "y": 360.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"6b2f2900d36d6d0a71c0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"z\":0,\"width\":523.3333333333334,\"height\":448.33333333333337,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"LoanData.age_group\",\"active\":true}],\"Y\":[{\"queryRef\":\"Measure_.Total Loans\"},{\"queryRef\":\"Measure_.Default Rate\"}],\"Rows\":[{\"queryRef\":\"Loan_Data.security_type\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"LoanData\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Measure_\",\"Type\":0},{\"Name\":\"l1\",\"Entity\":\"Loan_Data\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"age_group\"},\"Name\":\"LoanData.age_group\",\"NativeReferenceName\":\"age_group\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"},\"Name\":\"Measure_.Total Loans\",\"NativeReferenceName\":\"Total Loans\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Default Rate\"},\"Name\":\"Measure_.Default Rate\",\"NativeReferenceName\":\"Default Rate\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l1\"}},\"Property\":\"security_type\"},\"Name\":\"Loan_Data.security_type\",\"NativeReferenceName\":\"security_type\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 448.33,
+          "width": 523.33,
+          "x": 10.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{\"objects\":{\"background\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":3,\"Percent\":0}}}}}}}],\"outspace\":[{\"properties\":{\"color\":{\"solid\":{\"color\":{\"expr\":{\"ThemeDataColor\":{\"ColorId\":0,\"Percent\":0}}}}}}}]}}",
+      "displayName": "Portfolio ",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "7a1cad956436c864d317",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"736e22028e86182d6eec\",\"layouts\":[{\"id\":0,\"position\":{\"x\":371.6666666666667,\"y\":360,\"z\":0,\"width\":635,\"height\":153.33333333333334,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Measure_.Total Loans\"},{\"queryRef\":\"Measure_.Total Loan Volume\"},{\"queryRef\":\"Measure_.Default Rate\"},{\"queryRef\":\"Measure_.Avg Credit Score\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Measure_\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"},\"Name\":\"Measure_.Total Loans\",\"NativeReferenceName\":\"Total Loans\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loan Volume\"},\"Name\":\"Measure_.Total Loan Volume\",\"NativeReferenceName\":\"Total Loan Volume\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Default Rate\"},\"Name\":\"Measure_.Default Rate\",\"NativeReferenceName\":\"Default Rate\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Avg Credit Score\"},\"Name\":\"Measure_.Avg Credit Score\",\"NativeReferenceName\":\"Avg Credit Score\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 153.33,
+          "width": 635.00,
+          "x": 371.67,
+          "y": 360.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"832cacd54ed4546a2758\",\"layouts\":[{\"id\":0,\"position\":{\"x\":32,\"y\":360,\"z\":2000,\"width\":342,\"height\":338,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Measure_.Total Loans\"},{\"queryRef\":\"Measure_.Default Rate\"}],\"Category\":[{\"queryRef\":\"Loan_Data.region\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Measure_\",\"Type\":0},{\"Name\":\"l\",\"Entity\":\"Loan_Data\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"},\"Name\":\"Measure_.Total Loans\",\"NativeReferenceName\":\"Total Loans\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Default Rate\"},\"Name\":\"Measure_.Default Rate\",\"NativeReferenceName\":\"Default Rate\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"region\"},\"Name\":\"Loan_Data.region\",\"NativeReferenceName\":\"region\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 338.00,
+          "width": 342.00,
+          "x": 32.00,
+          "y": 360.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"a19681746ea990a589ea\",\"layouts\":[{\"id\":0,\"position\":{\"x\":514.2857142857143,\"y\":0,\"z\":3000,\"width\":347.14285714285717,\"height\":338.5714285714286,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Loan_Data.loan_amount_band\",\"active\":true}],\"Y\":[{\"queryRef\":\"Measure_.Total Loans\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"Loan_Data\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Measure_\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"loan_amount_band\"},\"Name\":\"Loan_Data.loan_amount_band\",\"NativeReferenceName\":\"loan_amount_band\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"},\"Name\":\"Measure_.Total Loans\",\"NativeReferenceName\":\"Total Loans\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 338.57,
+          "width": 347.14,
+          "x": 514.29,
+          "y": 0.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"b5ae4c49a073c97c3972\",\"layouts\":[{\"id\":0,\"position\":{\"x\":946,\"y\":0,\"z\":4000,\"width\":334,\"height\":338,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"advancedSlicerVisual\",\"projections\":{\"Values\":[{\"queryRef\":\"LoanData.age_group\"}],\"Label\":[{\"queryRef\":\"Min(LoanData.region)\"}],\"Tooltips\":[{\"queryRef\":\"Min(LoanData.gender)\"},{\"queryRef\":\"Min(LoanData.loan_purpose)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"LoanData\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"age_group\"},\"Name\":\"LoanData.age_group\",\"NativeReferenceName\":\"age_group\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"region\"}},\"Function\":3},\"Name\":\"Min(LoanData.region)\",\"NativeReferenceName\":\"First region\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"gender\"}},\"Function\":3},\"Name\":\"Min(LoanData.gender)\",\"NativeReferenceName\":\"First gender\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"loan_purpose\"}},\"Function\":3},\"Name\":\"Min(LoanData.loan_purpose)\",\"NativeReferenceName\":\"First loan_purpose\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"filter\":{\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"LoanData\",\"Type\":0}],\"Where\":[{\"Condition\":{\"In\":{\"Expressions\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"age_group\"}}],\"Values\":[[{\"Literal\":{\"Value\":\"'45-54'\"}}]]}}}]}}}}]},\"cachedFilterDisplayItems\":[{\"id\":{\"scopeId\":{\"Comparison\":{\"ComparisonKind\":0,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"LoanData\"}},\"Property\":\"age_group\"}},\"Right\":{\"Literal\":{\"Value\":\"'45-54'\"}}}}},\"displayName\":\"45-54\"}]}}",
+          "filters": "[]",
+          "height": 338.00,
+          "width": 334.00,
+          "x": 946.00,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"b6006e9d0a355b611070\",\"layouts\":[{\"id\":0,\"position\":{\"x\":13.333333333333332,\"y\":0,\"z\":1000,\"width\":426,\"height\":338,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"LoanData.status_label\",\"active\":true}],\"Y\":[{\"queryRef\":\"Measure_.Total Loans\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"LoanData\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Measure_\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"status_label\"},\"Name\":\"LoanData.status_label\",\"NativeReferenceName\":\"status_label\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"},\"Name\":\"Measure_.Total Loans\",\"NativeReferenceName\":\"Total Loans\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Total Loans\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 338.00,
+          "width": 426.00,
+          "x": 13.33,
+          "y": 0.00,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Risk Drivers",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "fb9a3dbd519d3d1cd740",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"59e03246185c2d0c93de\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":335,\"z\":1000,\"width\":610,\"height\":241.66666666666669,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Loan_Data.credit_score_band\",\"active\":true}],\"Y\":[{\"queryRef\":\"Measure_.Default Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"Loan_Data\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Measure_\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"credit_score_band\"},\"Name\":\"Loan_Data.credit_score_band\",\"NativeReferenceName\":\"credit_score_band\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Default Rate\"},\"Name\":\"Measure_.Default Rate\",\"NativeReferenceName\":\"Default Rate\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Default Rate\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 241.67,
+          "width": 610.00,
+          "x": 0.00,
+          "y": 335.00,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"70b532b2044e427a50da\",\"layouts\":[{\"id\":0,\"position\":{\"x\":593.3333333333334,\"y\":83.33333333333334,\"z\":1001,\"width\":653.3333333333334,\"height\":225,\"tabOrder\":1001}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(Loan_Data.dtir1)\"}],\"X\":[{\"queryRef\":\"Pivot_LTVxDTI.ltv_band\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"l\",\"Entity\":\"Loan_Data\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"Pivot_LTVxDTI\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"l\"}},\"Property\":\"dtir1\"}},\"Function\":0},\"Name\":\"Sum(Loan_Data.dtir1)\",\"NativeReferenceName\":\"Sum of dtir1\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"ltv_band\"},\"Name\":\"Pivot_LTVxDTI.ltv_band\",\"NativeReferenceName\":\"ltv_band\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 225.00,
+          "width": 653.33,
+          "x": 593.33,
+          "y": 83.33,
+          "z": 1001.00
+        },
+        {
+          "config": "{\"name\":\"83d9b1b7719707e6e090\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":566.6666666666667,\"height\":165,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Rows\":[{\"queryRef\":\"Pivot_LTVxDTI.ltv_band\",\"active\":true}],\"Columns\":[{\"queryRef\":\"Pivot_LTVxDTI.dti_band\",\"active\":true}],\"Values\":[{\"queryRef\":\"Measure_.Default Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Pivot_LTVxDTI\",\"Type\":0},{\"Name\":\"m\",\"Entity\":\"Measure_\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"ltv_band\"},\"Name\":\"Pivot_LTVxDTI.ltv_band\",\"NativeReferenceName\":\"ltv_band\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"dti_band\"},\"Name\":\"Pivot_LTVxDTI.dti_band\",\"NativeReferenceName\":\"dti_band\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"Default Rate\"},\"Name\":\"Measure_.Default Rate\",\"NativeReferenceName\":\"Default Rate\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 165.00,
+          "width": 566.67,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"ff0ddf8d74049156b9c7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":640,\"y\":360,\"z\":1002,\"width\":235,\"height\":150,\"tabOrder\":1002}}],\"singleVisual\":{\"visualType\":\"cardVisual\",\"projections\":{\"Data\":[{\"queryRef\":\"Measure_.% Imputed Rate Values\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"m\",\"Entity\":\"Measure_\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"% Imputed Rate Values\"},\"Name\":\"Measure_.% Imputed Rate Values\",\"NativeReferenceName\":\"% Imputed Rate Values\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"m\"}},\"Property\":\"% Imputed Rate Values\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 150.00,
+          "width": 235.00,
+          "x": 640.00,
+          "y": 360.00,
+          "z": 1002.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ],
+  "theme": "AccessibleOrchid"
+}
