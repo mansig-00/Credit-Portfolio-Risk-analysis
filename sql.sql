@@ -261,3 +261,27 @@ WHERE c.loan_amount > 0
 GROUP BY c.region, c.credit_score_band
 HAVING COUNT(*) > 50
 ORDER BY c.region, risk_rank_in_region;
+
+
+
+SELECT region, COUNT(*) AS total_loans, ROUND(SUM(status)/COUNT(*)*100,1) AS default_rate_pct
+FROM loan_default_clean GROUP BY region ORDER BY default_rate_pct;
+
+SELECT credit_score_band, COUNT(*) AS total_loans, ROUND(SUM(status)/COUNT(*)*100,1) AS default_rate_pct
+FROM loan_default_clean GROUP BY credit_score_band
+ORDER BY FIELD(credit_score_band,'Poor','Fair','Good','Very Good','Exceptional');
+
+
+SELECT
+  CASE WHEN ltv<=60 THEN '<=60' WHEN ltv<=80 THEN '60-80' WHEN ltv<=95 THEN '80-95' ELSE '>95' END AS ltv_band,
+  COUNT(*) AS total_loans, ROUND(SUM(status)/COUNT(*)*100,1) AS default_rate_pct
+FROM loan_default_clean GROUP BY ltv_band;
+
+
+SELECT region, credit_score_band, COUNT(*) AS total_loans,
+       ROUND(SUM(status)/COUNT(*)*100,2) AS default_rate_pct,
+       RANK() OVER (PARTITION BY region ORDER BY SUM(status)/COUNT(*) DESC) AS risk_rank_in_region
+FROM loan_default_clean
+GROUP BY region, credit_score_band
+HAVING COUNT(*) > 50
+ORDER BY region, risk_rank_in_region;
