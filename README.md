@@ -24,3 +24,9 @@ North	22.5%
 South	26.6%
 Central	27.5%
 North-East	30.4%
+The Data Analysis in Power Bi looks like:
+
+![Screenshot of dashboard of the analysis](https://github.com/mansig-00/Credit-Portfolio-Risk-analysis/blob/main/png1.png)
+![Screenshot of dashboard of the analysis](https://github.com/mansig-00/Credit-Portfolio-Risk-analysis/blob/main/png2.png)
+![Screenshot of dashboard of the analysis](https://github.com/mansig-00/Credit-Portfolio-Risk-analysis/blob/main/png3.png)
+![Screenshot of dashboard of the analysis](https://github.com/mansig-00/Credit-Portfolio-Risk-analysis/blob/main/png4.png)
