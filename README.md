@@ -7,8 +7,6 @@ Loan_Default.csv → MySQL (clean) → Excel → Power BI
 loans under $150K default at 31.8%, vs. 20.3% for the $450–600K band. This likely reflects 
 who takes out small loans (thinner-margin borrowers) rather than loan size itself causing risk
 
-Credit score shows no meaningful relationship with default risk in this dataset — unlike typical lending data, where it's usually the strongest predictor.
- 
 ### LTV is the strongest, most intuitive predictor — but not in a straight line:
 
 LTV band	Default rate
